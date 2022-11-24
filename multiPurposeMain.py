@@ -91,7 +91,7 @@ async def on_message(message):
 
 
 with open('asdfID.txt') as f: #This is where the bt goes.
-    TOKEN = f.readline()
+    asdfID = f.readline()
 
-bot.run(TOKEN)
+bot.run(asdfID)
 
