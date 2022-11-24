@@ -80,7 +80,7 @@ userSwears = 0
  
 @bot.event
 async def on_message(message):
-    badword_list = ["stupid","dumb","test"] #Either store it as a list or read in a notepad file with a lot of swear words.
+    badword_list = ["badWord1","badWord2","badWord3"] #Either store it as a list or read in a notepad file with a lot of swear words.
     for i in range (len(badword_list)):
         if badword_list[i] in message.content.lower():
             global userSwears #Setting to global variable
