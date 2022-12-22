@@ -1,4 +1,4 @@
-Features
+This is my Discord Bot that I created. This bot is designed to provide a range of useful features to optimize and enhance your Discord server experience.
 
 Some of the current features of the Discord Bot include:
 
