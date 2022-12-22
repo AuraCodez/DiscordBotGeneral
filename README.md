@@ -1,9 +1,14 @@
-# DiscordBotGeneral
+Features
 
-A very useful discord bot that has a bunch of commands to make your Discord Server more optimized. 
-Some features include
-- Keeping track of how many times has cursed
-- Greeting the user when they enter the server
-- Generate random quotes, and facts.
+Some of the current features of the Discord Bot include:
 
-I am looking to add more features to the bot in the future. Mainly things to do with security of the server, such as kicking, muting, etc.
+    Tracking the number of times users have cursed in the server
+    Greeting users as they enter the server
+    Generating random quotes and facts
+
+Future Features
+
+In the future, we plan to add more features to the Discord Bot, including:
+
+    Security-related commands, such as the ability to kick and mute users
+    Additional customization options, such as the ability to set a custom greeting message
