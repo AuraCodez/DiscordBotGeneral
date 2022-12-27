@@ -11,3 +11,4 @@ Future Features
 
     - Security-related commands, such as the ability to kick and mute users
     - Additional customization options, such as the ability to set a custom greeting message
+    - Using a database to keep track of swear count so that it doesn't reset after the discord bot has been turned off.
