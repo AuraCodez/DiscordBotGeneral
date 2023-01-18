@@ -5,7 +5,7 @@ Some of the current features of the Discord Bot include:
     - Tracking the number of times users have cursed in the server
     - Deletes Curse Words immediately when a user has said it
     - Greeting users as they enter the server
-    - Generating random quotes and facts
+    - Generating random quotes and facts from the usage of a restful api
 
 Future Features
 
