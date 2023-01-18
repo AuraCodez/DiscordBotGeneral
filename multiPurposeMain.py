@@ -40,10 +40,13 @@ async def quote(ctx):
 # API fact
 @bot.command()
 async def fact(ctx):
+    with open("apiID.txt") as f:
+       api_key = f.read()
+        
     limit = 3
     api_url = "https://api.api-ninjas.com/v1/facts?limit={}".format(limit)
     response = requests.get(
-        api_url, headers={"X-Api-Key": "+ajDL3LdvvpWYasc9ONU1w==D72XIVliNRo5iazs"}
+        api_url, headers={"X-Api-Key": api_key}
     )
     factList = loads(response.text)
     factz = []
