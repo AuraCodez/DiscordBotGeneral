@@ -13,3 +13,6 @@ Future Features
     - Additional customization options, such as the ability to set a custom greeting message
     - Using a database to keep track of swear count so that it doesn't reset after the discord bot has been turned off.
     - Keeping the bot on 24/7
+
+
+The code is in mainPurposemain.py
