@@ -15,4 +15,4 @@ Future Features
     - Keeping the bot on 24/7
 
 
-The code is in mainPurposemain.py
+The code is in multiPurposemain.py
