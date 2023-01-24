@@ -37,4 +37,6 @@ I am currently working on:
 ### Executing program
 
 * You have to replace the server ID with your own server ID in order to make the bot interact with the users otherwise some commands may not work.
+* Store any swear words in the badword.txt file
+
 ```
