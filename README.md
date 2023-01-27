@@ -4,7 +4,7 @@ Technologies Used : Python and Discord.py Library
 
 ## Description
 
-This is my Discord Bot that I created. This bot is designed to provide a range of useful features to optimize and enhance your Discord server experience. 
+This is my Discord Bot that I created. This bot is designed to provide a range of useful features to optimize and enhance your Discord server experience. Please read the code as I added comments on what you should add and replace.
 
 Some of the current features of the Discord Bot include:
 
