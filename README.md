@@ -15,8 +15,7 @@ Some of the current features of the Discord Bot include:
     
     
 I am currently working on:
-
-    - Implementing SQLite to keep track of the swear count that each user has, as long as storing what swear word they said
+     - Changing the current database of SQLite to MySQL
     - Keeping the Discord Bot Running 24/7
     - Making it fetch data from Reddit about news about finance, technology, etc.
 
