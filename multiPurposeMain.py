@@ -13,8 +13,9 @@ bot = commands.Bot(command_prefix=",", intents=intents)
 
 
 #Database to store 1) the swear word and 2) the swear count of each user 3) the username
-#Make a database named swearDB.db (or any name you perfer) and store it in the root directory of your repo
+#Uncomment the cursor.execute and that will create the swearDB.db file and make the table with the columns.
 conn = sqlite3.connect("swearDB.db")
+#cursor.execute('CREATE TABLE IF NOT EXISTS swear(name TEXT, word TEXT, count INTEGER)) 
 cursor = conn.cursor()
 
 
