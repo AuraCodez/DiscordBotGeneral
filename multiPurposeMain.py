@@ -1,5 +1,6 @@
 import discord
 from discord.ext import commands
+import sqlite3
 from json import loads
 import random
 import requests
@@ -11,7 +12,16 @@ client = discord.Client(intents=intents)
 bot = commands.Bot(command_prefix=",", intents=intents)
 
 
-yourServerIdGoesHere = 0  # Setup Your server ID here (To introduce the users to your server)
+#Database to store 1) the swear word and 2) the swear count of each user 3) the username
+#Make a database named swearDB.db (or any name you perfer) and store it in the root directory of your repo
+conn = sqlite3.connect("swearDB.db")
+cursor = conn.cursor()
+
+
+
+yourServerIdGoesHere = (
+    0  # Setup Your server ID here (To introduce the users to your server)
+)
 yourChannelIdGoesHere = 0  # 0 Set up your channel ID to greet the user here.
 
 
@@ -41,19 +51,17 @@ async def quote(ctx):
 @bot.command()
 async def fact(ctx):
     with open("apiID.txt") as f:
-       api_key = f.read()
-        
+        api_key = f.read()
+
     limit = 3
     api_url = "https://api.api-ninjas.com/v1/facts?limit={}".format(limit)
-    response = requests.get(
-        api_url, headers={"X-Api-Key": api_key}
-    )
+    response = requests.get(api_url, headers={"X-Api-Key": api_key})
     factList = loads(response.text)
     factz = []
     for i in range(len(factList)):
         for key in factList[i]:
             factz.append(factList[i][key])
-    
+
     factzRandom = random.choice(factz)
     await ctx.send(factzRandom)
 
@@ -76,13 +84,21 @@ async def on_message(message):
     badword_list = [
         "test",
         "stuff",
-        "lol"
+        "lol",
     ]  # Either store it as a list or read in a notepad file with a lot of swear words.
     for i in range(len(badword_list)):
         if badword_list[i] in message.content.lower():
             global swearJar  # Setting to global variable
             swearJar += 1
             await message.channel.purge(limit=1)
+            user = str(message.author)
+            message_content = message.content
+            cursor.execute(
+                "INSERT INTO swear(name, word, count) VALUES(?, ?, ?)",
+                (user, message_content, swearJar),
+            )
+            conn.commit()
+            conn.close()
             await message.author.send(
                 f"Watch it. You currently have {swearJar} swears in total. Reaching 20 would result in an automatic ban."
             )
@@ -91,7 +107,7 @@ async def on_message(message):
     )  # You're trying to run the commands and a on_message at the same time, which causes the commands not to work. So you need to add this process_commands
 
 
-with open("asdfID.txt") as f:  # This is where the bt goes.
+with open("asdfID.txt") as f:  # This is where the bt goes. Paste it in here.
     TOKEN = f.readline()
 
 
