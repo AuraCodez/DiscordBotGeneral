@@ -58,13 +58,13 @@ async def fact(ctx):
     api_url = "https://api.api-ninjas.com/v1/facts?limit={}".format(limit)
     response = requests.get(api_url, headers={"X-Api-Key": api_key})
     factList = loads(response.text)
-    factz = []
+    facts = []
     for i in range(len(factList)):
         for key in factList[i]:
-            factz.append(factList[i][key])
+            facts.append(factList[i][key])
 
-    factzRandom = random.choice(factz)
-    await ctx.send(factzRandom)
+    randomFact = random.choice(facts)
+    await ctx.send(randomFact)
 
 
 @bot.event
